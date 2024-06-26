@@ -1,3 +1,5 @@
+
+import React from "react"
 import { SelectionType } from "../interfaces/general"
 
 interface Props {
@@ -19,6 +21,7 @@ export const TextArea = ({ type, placeholder, value, onChange }: Props) => {
             autoFocus={type === SelectionType.From}
             placeholder={placeholder}
             value={value}
+            disabled={type === SelectionType.To}
             onChange={handleChange}
             className={type === SelectionType.From ? `${commonStyles}` : `${commonStyles} bg-slate-200`}
         ></textarea>
