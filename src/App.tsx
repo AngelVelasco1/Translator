@@ -23,10 +23,13 @@ function App() {
   }
 
   useEffect(() => {
-  
+    if(userText === '') {
+      setTranslatedText('')
+      return
+    }
     translateText()
     
-  }, [userText, fromLanguage, toLanguage, setTranslatedText])
+  }, [userText, fromLanguage, toLanguage])
   return (
     <Theme>
       <div className="app w-10/12 mx-auto">
